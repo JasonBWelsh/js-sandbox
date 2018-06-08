@@ -43,46 +43,61 @@
 
 // Return Max Character
 
-function maxCharacter(str) {
-  const charMap = {};
-  let maxNum = 1;
-  let maxChar;
-
-  str.split('').forEach(char => {
-    if (charMap[char]) {
-      charMap[char] ++;
-    } else {
-      charMap[char] = 1;
-    }
-  });
-
-  for (let char in charMap) {
-    if (charMap[char] > maxNum) {
-      maxNum ++;
-      maxChar = char;
-    }
-  }
-  return maxChar;
-}
+// function maxCharacter(str) {
+//   const charMap = {};
+//   let maxNum = 1;
+//   let maxChar;
+//
+//   str.split('').forEach(char => {
+//     if (charMap[char]) {
+//       charMap[char] ++;
+//     } else {
+//       charMap[char] = 1;
+//     }
+//   });
+//
+//   for (let char in charMap) {
+//     if (charMap[char] > maxNum) {
+//       maxNum ++;
+//       maxChar = char;
+//     }
+//   }
+//   return maxChar;
+// }
 
 
 // control
-let val = maxCharacter('javascript');
-console.log(val);
+// let val = maxCharacter('javascript');
+// console.log(val);
 
 // syntax practice
-const equip = {item1: 'sandbag', item2: 'kettlebell', item3: 'jumprope'};
-const modalities = ['sandbag', 'calisthenics', 'barbell', 'kettlebell', 'HIIT', 'cardio', 'walking'];
-const stuff = [1, 2, 3, ...modalities];
+// const equip = {item1: 'sandbag', item2: 'kettlebell', item3: 'jumprope'};
+// const modalities = ['sandbag', 'calisthenics', 'barbell', 'kettlebell', 'HIIT', 'cardio', 'walking'];
+// const stuff = [1, 2, 3, ...modalities];
+//
+// let {item1:x, item2:y, item3:z} = equip;
+//
+// let [a, b, c, ...d] = modalities;
+//
+//
+// console.log(stuff);
 
-let {item1:x, item2:y, item3:z} = equip;
+// Return longest word
 
-let [a, b, c, ...d] = modalities;
+function longestWord(sen) {
+  const wordArr = sen.toLowerCase('').match(/[a-z0-9]+/g);
+  const sorted = wordArr.sort((a, b) => b.length - a.length);
+  const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
+  return longestWordArr;
+}
 
+const sentence = `He piled upon the whale's white hump
+the sum of all the general rage and hate felt by his whole race from Adam down;
+and then, as if his chest had been a mortar,
+he burst his hot heart's shell upon it.`;
 
-console.log(stuff);
-
-
+const zangor = longestWord(sentence);
+console.log(zangor);
 
 
 //
