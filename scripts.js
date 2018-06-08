@@ -89,10 +89,11 @@ function longestWord(sen) {
   const sorted = wordArr.sort((a, b) => b.length - a.length);
   const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
 
-  if (longestWordArr.length === 1) {
-    return longestWordArr[0];
-  }
-  return longestWordArr;
+  // if (longestWordArr.length === 1) {
+  //   return longestWordArr[0];
+  // }
+  // return longestWordArr;
+  return (longestWordArr.length === 1 ? longestWordArr[0] : longestWordArr);
 }
 
 const sentence = `He piled upon the whale's white hump
