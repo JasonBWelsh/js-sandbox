@@ -49,11 +49,12 @@
 //   let maxChar;
 //
 //   str.split('').forEach(char => {
-//     if (charMap[char]) {
-//       charMap[char] ++;
-//     } else {
-//       charMap[char] = 1;
-//     }
+//     // if (charMap[char]) {
+//     //   charMap[char] ++;
+//     // } else {
+//     //   charMap[char] = 1;
+//     // }
+//     charMap[char] ? charMap[char] ++ : charMap[char] = 1;
 //   });
 //
 //   for (let char in charMap) {
@@ -62,13 +63,21 @@
 //       maxChar = char;
 //     }
 //   }
-//   return maxChar;
+//   return [maxChar, charMap];
 // }
 
+// return Char MAp
+function charMap(str) {
+  const map = {};
+  str.split('').forEach(char => {
+    map[char] ? map[char] ++ : map[char] = 1;
+  });
+  return map;
+}
 
 // control
-// let val = maxCharacter('javascript');
-// console.log(val);
+let val = charMap('javascript');
+console.log(val);
 
 // syntax practice
 // const equip = {item1: 'sandbag', item2: 'kettlebell', item3: 'jumprope'};
@@ -101,16 +110,16 @@
 // console.log(zangor);
 
 // chunk array
-function chunkArray(arr, len) {
-  const chunkedArr = [];
-  let i = 0;
-  while (i < arr.length) {
-    chunkedArr.push(arr.slice(i, i + len));
-    i += len;
-  }
-  return chunkedArr;
-}
-const x = chunkArray([1,2,3,4,5,6,7,8,9,10], 3);
-console.log(x);
+// function chunkArray(arr, len) {
+//   const chunkedArr = [];
+//   let i = 0;
+//   while (i < arr.length) {
+//     chunkedArr.push(arr.slice(i, i + len));
+//     i += len;
+//   }
+//   return chunkedArr;
+// }
+// const x = chunkArray([1,2,3,4,5,6,7,8,9,10], 3);
+// console.log(x);
 
 //
