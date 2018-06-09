@@ -84,25 +84,33 @@
 
 // Return longest word
 
-function longestWord(sen) {
-  const wordArr = sen.toLowerCase('').match(/[a-z0-9]+/g);
-  const sorted = wordArr.sort((a, b) => b.length - a.length);
-  const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
+// function longestWord(sen) {
+//   const wordArr = sen.toLowerCase('').match(/[a-z0-9]+/g);
+//   const sorted = wordArr.sort((a, b) => b.length - a.length);
+//   const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
+//
+//   return (longestWordArr.length === 1 ? longestWordArr[0] : longestWordArr);
+// }
+//
+// const sentence = `He piled upon the whale's white hump
+// the sum of all the general rage and hate felt by his whole race from Adam down;
+// and then, as if his chest had been a mortar,
+// he burst his hot heart's shell upon it.`;
+//
+// const zangor = longestWord(sentence);
+// console.log(zangor);
 
-  // if (longestWordArr.length === 1) {
-  //   return longestWordArr[0];
-  // }
-  // return longestWordArr;
-  return (longestWordArr.length === 1 ? longestWordArr[0] : longestWordArr);
+// chunk array
+function chunkArray(arr, len) {
+  const chunkedArr = [];
+  let i = 0;
+  while (i < arr.length) {
+    chunkedArr.push(arr.slice(i, i + len));
+    i += len;
+  }
+  return chunkedArr;
 }
-
-const sentence = `He piled upon the whale's white hump
-the sum of all the general rage and hate felt by his whole race from Adam down;
-and then, as if his chest had been a mortar,
-he burst his hot heart's shell upon it.`;
-
-const zangor = longestWord(sentence);
-console.log(zangor);
-
+const x = chunkArray([1,2,3,4,5,6,7,8,9,10], 3);
+console.log(x);
 
 //
